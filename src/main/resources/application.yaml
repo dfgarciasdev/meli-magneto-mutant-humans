@@ -1,0 +1,4 @@
+server:
+  port: ${PORT_APPLICATION:8001}
+  error:
+    include-message: always
