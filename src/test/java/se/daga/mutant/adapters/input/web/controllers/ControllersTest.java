@@ -10,12 +10,12 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 
 /**
- * Test integration mutant human controller.
+ * Controllers test.
  *
  * @author davidgarcia
  */
 @SpringBootTest(webEnvironment = RANDOM_PORT)
-class MutantHumanControllerTest {
+class ControllersTest {
     @Autowired
     private WebTestClient client;
 
@@ -78,5 +78,21 @@ class MutantHumanControllerTest {
                 .bodyValue(mutantRequest)
                 .exchange()
                 .expectStatus().is5xxServerError();
+    }
+
+
+    @Test
+    void stats() {
+        client.get()
+                .uri("/stats")
+                .accept(APPLICATION_JSON)
+                .exchange()
+                .expectStatus().isOk()
+                .expectHeader().contentType(APPLICATION_JSON)
+                .expectBody()
+                .jsonPath("$.count_mutant_dna").isEqualTo(1L)
+                .jsonPath("$.count_human_dna").isEqualTo(0L)
+                .jsonPath("$.ratio").isEqualTo(0.0F);
+
     }
 }

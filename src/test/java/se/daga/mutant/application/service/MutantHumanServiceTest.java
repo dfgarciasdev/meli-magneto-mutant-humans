@@ -3,10 +3,12 @@ package se.daga.mutant.application.service;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import se.daga.mutant.application.exceptions.MutantHumanException;
 import se.daga.mutant.application.ports.in.MutantHumanUseCase;
+import se.daga.mutant.application.ports.out.SaveHumanPort;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -34,6 +36,9 @@ class MutantHumanServiceTest {
             "TCACTG"};
     @Autowired
     private MutantHumanUseCase mutantHumanUseCase;
+
+    @MockBean
+    private SaveHumanPort saveHumanPort;
 
     @Test
     void MutantHuman() {
