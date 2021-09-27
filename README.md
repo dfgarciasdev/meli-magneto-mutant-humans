@@ -1,4 +1,7 @@
 # Test Mercado libre -  Humanos Mutantes de Magneto   
+![coverage](https://img.shields.io/badge/coverage->90%25-yellowgreen)
+![Gradle](https://img.shields.io/badge/Gradle-v7.1.X-yellowgreen.svg)
+![Java](https://img.shields.io/badge/Java-11-yellow.svg)
 
 A partir de las instrucciones otorgadas por el equipo de Mercado Libre para presentar el test de ingreso se procede a desarrollar una idea que satisfaga los requerimientos funcionales y no funcionales y a su vez, cumpla con la meta del ejercicio.
 
@@ -19,8 +22,8 @@ A continuación se podrán apreciar el diagrama a nivel general de la paqueteria
 
 ### Proceso para iniciar la solución:
 #### Prerequisitos:
-- [x] Java JDK 11
-- [x] Docker
+- [Java](https://adoptopenjdk.net/)
+- [Docker](https://www.docker.com/)
 #### Proceso:
 1. Ir al root del proyecto y lanzar el comando desde la terminal.
 ```bash
@@ -28,7 +31,7 @@ A continuación se podrán apreciar el diagrama a nivel general de la paqueteria
  ```
 2. Lanzar el comando para construir y ejecutar los contenedores con la solución.
 ```bash
-docker-compose UP
+docker-compose up
  ```
 3. Lanzar el comando para revisar el status del servicio.
 ```bash
