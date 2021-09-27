@@ -31,6 +31,12 @@ dependencies {
 	testAnnotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
 }
 
+jar {
+	enabled = false
+}
+
+
+
 test {
 	useJUnitPlatform()
 }
