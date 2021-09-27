@@ -63,6 +63,5 @@ java -jar build/libs/meli-magneto-mutant-humans-1.0.0.jar
 Tener encuenta que se debe tener instaldo MongoDB, se puede configurar las propiedades de la solución mediante las variables.
 ```bash
 PORT_APPLICATION
-PORT_MONGO_DB
-HOST_MONGO_DB
+URI_MONGO_DB
  ```
