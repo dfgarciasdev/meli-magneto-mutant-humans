@@ -25,7 +25,15 @@ A continuación se podrán apreciar el diagrama a nivel general de la paqueteria
 - [Java](https://adoptopenjdk.net/)
 - [Docker](https://www.docker.com/)
 - [Postman](https://www.postman.com/)
-- Colección de [Postman](api/collections.postman/meli-mutant-api-test.postman_collection.json) para hacer pruebas al endpoint del api cloud https://meli-mutant-api-test.herokuapp.com
+
+#### Proceso para ejecutar la solución en cloud:
+1. Endpoint cloud: https://meli-mutant-api-test.herokuapp.com
+2. Descargar la colección de Postman e importarla [Collection](api/collections.postman/meli-mutant-api-test.postman_collection.json)
+3. Ejecutar cada una de las apis (status del servicio, validar mutante y estadísticas).
+   ![Arquitectura](assets/ListApiOperations.png)
+
+**Nota**: Si no se tiene postman se puede hacer el consumo del api con
+los comandos del proceso de ejecución local (puntos 3, 4 y 5) desde una terminal cambiando el endpoint para que apunte al cloud.
 #### Proceso para ejecutar la solución en local:
 1. Ir al root del proyecto y lanzar el comando desde la terminal.
 ```bash
