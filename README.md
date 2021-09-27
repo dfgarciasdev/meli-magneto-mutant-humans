@@ -18,10 +18,10 @@ A continuación se podrán apreciar el diagrama a nivel general de la paqueteria
 ![Arquitectura](assets/CleanArchitecture.png)
 
 ### Proceso para iniciar la solución:
-####Prerequisitos:
+#### Prerequisitos:
 - [x] Java JDK 11
 - [x] Docker
-####Proceso:
+#### Proceso:
 1. Ir al root del proyecto y lanzar el comando desde la terminal.
 ```bash
 ./gradlew clean build
