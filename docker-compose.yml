@@ -1,0 +1,22 @@
+version: '2.1'
+
+services:
+  meli-magneto-mutant-humans:
+    build: .
+    mem_limit: 350m
+    environment:
+      - PORT_APPLICATION=8080
+      - HOST_MONGO_DB=mongodb
+      - PORT_MONGO_DB=27017
+    depends_on:
+      - mongodb
+    ports:
+      - "8080:8080"
+
+  # $ mongo
+  mongodb:
+    image: mongo:3.6.9
+    mem_limit: 350m
+    ports:
+      - "27017:27017"
+    command: mongod --smallfiles

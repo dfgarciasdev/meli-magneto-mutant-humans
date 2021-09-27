@@ -1,0 +1,10 @@
+server:
+  port: ${PORT_APPLICATION:8001}
+  error:
+    include-message: always
+spring:
+  data:
+    mongodb:
+      port: ${PORT_MONGO_DB:27017}
+      host: ${HOST_MONGO_DB:localhost}
+      database: humans-db
