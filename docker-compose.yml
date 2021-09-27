@@ -6,8 +6,7 @@ services:
     mem_limit: 350m
     environment:
       - PORT_APPLICATION=8080
-      - HOST_MONGO_DB=mongodb
-      - PORT_MONGO_DB=27017
+      - URI_MONGO_DB=mongodb://mongodb:27017
     depends_on:
       - mongodb
     ports:

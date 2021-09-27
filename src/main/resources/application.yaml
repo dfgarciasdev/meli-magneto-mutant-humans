@@ -5,6 +5,5 @@ server:
 spring:
   data:
     mongodb:
-      port: ${PORT_MONGO_DB:27017}
-      host: ${HOST_MONGO_DB:localhost}
+      uri: ${URI_MONGO_DB:mongodb://localhost:27017}
       database: humans-db
