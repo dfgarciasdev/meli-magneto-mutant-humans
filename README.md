@@ -21,10 +21,12 @@ A continuación se podrán apreciar el diagrama a nivel general de la paqueteria
 ![Arquitectura](assets/CleanArchitecture.png)
 
 ### Proceso para iniciar la solución:
-#### Prerequisitos:
+#### Pre requisitos:
 - [Java](https://adoptopenjdk.net/)
 - [Docker](https://www.docker.com/)
-#### Proceso:
+- [Postman](https://www.postman.com/)
+- Colección de [Postman](api/collections.postman/meli-mutant-api-test.postman_collection.json) para hacer pruebas al endpoint del api cloud https://meli-mutant-api-test.herokuapp.com
+#### Proceso para ejecutar la solución en local:
 1. Ir al root del proyecto y lanzar el comando desde la terminal.
 ```bash
 ./gradlew clean build
@@ -37,7 +39,6 @@ docker-compose up
 ```bash
 curl --location --request GET 'http://localhost:8080/actuator/health
 ```
-
 4. Lanzar el comando para validar si el humando es mutante (la prueba se puede hacer tambien desde postman).
 ```bash
 curl -v --location --request POST 'http://localhost:8080/mutant' \
@@ -52,7 +53,7 @@ curl -v --location --request POST 'http://localhost:8080/mutant' \
 }'
  ```
 
-5. Lanzar el comando para validar las estadisticas (la prueba se puede hacer tambien desde postman).
+5. Lanzar el comando para validar las estadísticas (la prueba se puede hacer también desde postman).
 ```bash
 curl --location --request GET 'http://localhost:8080/stats'
  ```
@@ -60,8 +61,12 @@ curl --location --request GET 'http://localhost:8080/stats'
 ```bash
 java -jar build/libs/meli-magneto-mutant-humans-1.0.0.jar
  ```
-Tener encuenta que se debe tener instaldo MongoDB, se puede configurar las propiedades de la solución mediante las variables.
+Tener en cuenta que se debe tener instalado MongoDB, se puede configurar las propiedades de la solución mediante las variables.
 ```bash
 PORT_APPLICATION
 URI_MONGO_DB
+ ```
+#### Pruebas unitarias
+```bash
+./gradlew clean test
  ```

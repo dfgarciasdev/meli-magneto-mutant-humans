@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "93d21c3c-9ff5-4e17-9b9e-5606fc310cdb",
+		"name": "meli-mutant-api-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "status-service",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API}}/actuator/health",
+					"host": [
+						"{{API}}"
+					],
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validate-mutant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n     \"dna\": [   \"ATGCGA\",\n                \"CAGTGA\",\n                \"TTAATA\",\n                \"AGAATA\",\n                \"GCGTCA\",\n                \"TCACTG\"\n                ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API}}/mutant",
+					"host": [
+						"{{API}}"
+					],
+					"path": [
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "stats-muntants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API}}/stats",
+					"host": [
+						"{{API}}"
+					],
+					"path": [
+						"stats"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API",
+			"value": "https://meli-mutant-api-test.herokuapp.com"
+		},
+		{
+			"key": "API",
+			"value": "http://localhost:8080",
+			"disabled": true
+		}
+	]
+}

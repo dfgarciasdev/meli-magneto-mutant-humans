@@ -56,7 +56,7 @@ public class HumanPersistenceAdapter implements SaveHumanPort, StatsHumansPort {
                 .collect(Collectors.partitioningBy(HumanEntity::isMutant, Collectors.counting()));
         var noMutants = partByIsMutant.getOrDefault(Boolean.FALSE, 0L);
         var mutants = partByIsMutant.getOrDefault(Boolean.TRUE, 0L);
-        var ratio = noMutants != 0 ? mutants / noMutants : 0L;
+        var ratio = noMutants != 0 ? mutants /(float)noMutants : 0.0F;
         return new StatsHumansModel(mutants, noMutants, ratio);
     }
 }
